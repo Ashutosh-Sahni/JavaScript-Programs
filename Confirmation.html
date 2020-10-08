@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <script type="text/javascript">
+        document.write("This is a program for Confirmation Dialog in JS");
+
+        function message() {
+
+            var x = confirm("This is a confirmation box?");
+            if (x == true) {
+                alert("You pressed OK");
+            } else {
+                alert("Cancel");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <br><br>
+    <input type="submit" value="Click Here" onclick="message()" />
+
+</body>
+
+</html>

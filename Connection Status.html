@@ -1,0 +1,19 @@
+﻿<html>
+
+<head>
+    <script>
+        function checkConnectionStatus() {
+            if (navigator.appVersion) {
+                top.alert("Application is online.");
+            } else {
+                alert("Application is offline.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="checkConnectionStatus();">Check Connection Status</button>
+</body>
+
+</html>

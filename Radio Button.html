@@ -1,0 +1,14 @@
+﻿<script type="text/javascript">
+    function show() {
+        var allgenders = document.getElementsByName("gender");
+        var gender = document.myform.gender.value;
+        alert("Total Genders: " + allgenders.length + "\n" + "Selected Gender: " + gender);
+
+    }
+</script>
+<form name="myform">
+    Male: <input type="radio" name="gender" id="male" value="male">
+    <br><br> Female: <input type="radio" name="gender" id="female" value="female">
+    <br><br>
+    <input type="button" onclick="show()" value="Total Genders">
+</form>

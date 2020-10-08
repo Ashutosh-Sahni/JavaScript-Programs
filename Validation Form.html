@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SignUp</title>
+    <script>
+        function abcc(str) {
+
+            var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+            if (regex.test(str) == false) {
+                document.getElementById('er1').innerHTML = "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+                signup.pwd1.value = null;
+                signup.pwd1.focus();
+                return false;
+            } else {
+                document.getElementById('er1').innerHTML = "";
+
+                return false;
+
+            }
+
+        }
+
+        function nm1(str2) {
+
+            var regex = /^[a-zA-Z]+$/;
+
+            if (regex.test(str2.value) == false) {
+                document.getElementById('er' + str2.name).innerHTML = "Only characters are alowed ";
+                str2.focus();
+                str2.value = null;
+                return false;
+            } else {
+                document.getElementById('er' + str2.name).innerHTML = "";
+
+                return false;
+
+            }
+        }
+
+        function abcc1(str1) {
+
+            if (str1 != signup.pwd1.value) {
+                document.getElementById('er2').innerHTML = "Password not match";
+                signup.pwd2.value = "";
+                signup.pwd2.focus();
+                return false;
+            } else {
+                document.getElementById('er2').innerHTML = "";
+
+                return false;
+
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Create a new account</h1>
+    <h3>It's free and always will be.</h3><br>
+    <form action="test" method="post" name="signup">
+
+        <div class="row">
+            <div class="col-xs-3">
+                <input type="text" placeholder="First Name" onchange="nm1(this)" name="fname" required>
+                <div id="erfname" style="color: red;"></div>
+            </div>
+            <div class="col-xs-3">
+                <input type="text" placeholder="Last Name" onchange="nm1(this)" name="lname" required>
+                <div id="erlname"></div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-xs-6">
+                <input type="text" placeholder="Choose Username @GlobalMail.com" name="uname" required>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+
+            <div class="col-xs-6">
+                <input type="Password" onchange="abcc(this.value)" placeholder="Enter Password" name="pwd1" placeholder="Re-Enter Password" id="pwd1" required>
+                <div id="er1"></div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+
+            <div class="col-xs-6">
+                <input type="password" onchange="abcc1(this.value)" placeholder="Re-Enter Password" name="pwd2" required>
+                <div id="er2"></div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-xs-6">
+                <input type="email" placeholder="Enter Alternative Email" name="phno" required>
+            </div>
+        </div>
+        <h3>
+            Birthday
+        </h3>
+        <div class="row">
+            <div class="col-xs-4	">
+                <input type="date" format='dd-mm-yyyy' name="dob" required>
+            </div>
+        </div>
+        <h3>
+            <label><input type="radio" name="gender" value="male" checked>Male</label>
+            <label><input type="radio" name="gender" value="female">Female</label>
+        </h3>
+        <input type="submit" class="btn btn-success" name="submit" value="Create Account">
+        <input type="reset" class="btn btn-info" value="Reset">
+        <br>
+    </form>
+    </div>
+    <br>
+</body>
+
+</html>
